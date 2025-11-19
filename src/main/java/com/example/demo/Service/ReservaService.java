@@ -27,7 +27,7 @@ public class ReservaService extends BaseService<Reserva, ReservaDTO> {
     }
 
     public List<ReservaDTO> calendario(){
-        LocalDateTime agora = LocalDateTime.now();
+        LocalDate agora = LocalDate.now();
         LocalDateTime inicioDaSemana = agora.with(DayOfWeek.MONDAY).atStartOfDay();
         LocalDateTime fimDaSemana = inicioDaSemana.plusDays(6)
                 .withHour(23)
