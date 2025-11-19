@@ -3,11 +3,9 @@ package com.example.demo.Service;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.BeanUtils;
 import com.example.demo.Entity.BaseEntity;
 import com.example.demo.Repository.BaseRepository;
-
 import jakarta.transaction.Transactional;
 
 public abstract class BaseService<E extends BaseEntity, D> {
