@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import com.example.demo.DTO.RecursoDTO;
 import com.example.demo.Service.BaseService;
 import jakarta.validation.Valid;
 
@@ -42,5 +43,9 @@ public abstract class BaseController<D> {
     public List<D> list(){
         return service.list();
     }
-    
+    @PostMapping
+    public RecursoDTO save(
+                @RequestBody @Valid RecursoDTO recursoCreateDTO ){
+            return service.save(recursoCreateDTO);
+}
 }

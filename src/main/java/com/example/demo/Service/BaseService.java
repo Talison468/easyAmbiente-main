@@ -4,6 +4,9 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.BeanUtils;
+
+import com.example.demo.DTO.AmbienteDTO;
+import com.example.demo.DTO.RecursoDTO;
 import com.example.demo.Entity.BaseEntity;
 import com.example.demo.Repository.BaseRepository;
 import jakarta.transaction.Transactional;
@@ -81,5 +84,17 @@ public abstract class BaseService<E extends BaseEntity, D> {
         }
         
         return dtos;
+    }
+
+     public RecursoDTO save(RecursoDTO recursoCreateDTO) {
+        throw new UnsupportedOperationException("Unimplemented method 'save'");
+     }
+
+     public List<AmbienteDTO> listarAmbienteRecurso(Long ambienteId, Long recursoId) {
+        throw new UnsupportedOperationException("Unimplemented method 'listarAmbienteRecurso'");
+     }
+
+     public List<AmbienteDTO> listarPorRecurso(Long recursoId){
+     throw new UnsupportedOperationException("Unimplemented method 'listarAmbienteRecurso'");
     }
 }

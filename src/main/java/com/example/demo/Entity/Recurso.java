@@ -5,6 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 
@@ -18,4 +20,8 @@ public class Recurso extends BaseEntity {
     
     @Column(nullable = false, unique = true)
     private String nome;
+
+    @ManyToMany
+    @JoinColumn(name = "ambiente_id")
+    private Ambiente ambientes;
 }

@@ -1,5 +1,6 @@
 package com.example.demo.Repository;
 
+import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import com.example.demo.Entity.Ambiente;
@@ -17,4 +18,7 @@ public interface AmbienteRepository extends BaseRepository<Ambiente, Long> {
     """)
     boolean temReservaFutura(Long id);
 
+    List<Ambiente> findByAmbienteRecurso(Long ambienteId, Long recursoId);
+
+    List<Ambiente> findByRecursoId(Long recursoId);
 }

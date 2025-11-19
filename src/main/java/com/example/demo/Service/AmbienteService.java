@@ -1,5 +1,7 @@
 package com.example.demo.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import com.example.demo.DTO.AmbienteDTO;
 import com.example.demo.Entity.Ambiente;
@@ -24,5 +26,20 @@ public class AmbienteService extends BaseService<Ambiente, AmbienteDTO>{
 
         super.delete(id);        
     }
-    
+    public List<AmbienteDTO> listarAmbienteRecursos(Long ambienteId, Long recursosId){
+        List<Ambiente> ambientes = repository.findByAmbienteRecurso(ambienteId, recursosId);
+        List<AmbienteDTO> dtos = new ArrayList<>();
+        for(Ambiente ambiente : ambientes){
+            dtos.add(super.toDto(ambiente));
+        }
+        return dtos;
+    }
+    public List<AmbienteDTO> listarPorRecursos(Long recursoId){
+        List<Ambiente> ambientes = repository.findByRecursoId(recursoId);
+        List<AmbienteDTO> dtos = new ArrayList<>();
+        for(Ambiente ambiente : ambientes){
+            dtos.add(super.toDto(ambiente));
+        }
+        return dtos;
+    }
 }
