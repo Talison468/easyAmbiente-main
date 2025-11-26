@@ -20,5 +20,11 @@ public interface AmbienteRepository extends BaseRepository<Ambiente, Long> {
 
     List<Ambiente> findByAmbienteRecurso(Long ambienteId, Long recursoId);
 
+    @Query("""
+            SELECT a
+            FROM Ambiente a
+            JOIN a.recursos r
+            WHERE r.id = :recursoId
+            """)
     List<Ambiente> findByRecursoId(Long recursoId);
 }

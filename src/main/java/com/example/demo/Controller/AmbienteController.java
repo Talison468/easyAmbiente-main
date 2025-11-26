@@ -15,7 +15,7 @@ public class AmbienteController extends BaseController<AmbienteDTO> {
     protected AmbienteController(AmbienteService service){
         super(service);
     }
-    @GetMapping("/ambientes/recursos/{ambienteId}/{recursoId}")
+    @GetMapping("/recursos/{ambienteId}/{recursoId}")
     public List<AmbienteDTO> ambientesPorRecurso(
         @PathVariable("ambienteId") Long ambienteId,
         @PathVariable("recursoId") Long recursoId) {
